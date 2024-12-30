@@ -20,14 +20,14 @@ img {
     max-width: 100%;
 }
 
-[class$="__contenedor"]{
+[class*="contenedor"]{
     max-width: 120rem;
     margin: 0 auto;
     width: 95%;
 }
 
-[class$="__heading"]{
-    font-family: 4rem;
+[class*="heading"]{
+    font-size: 4rem;
     text-align: center;
     font-weight: 900;
     color: var(--primary);
@@ -225,6 +225,49 @@ img {
     color: var(--blanco);
 }
 
+.producto__formulario{
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto__label{
+    font-size: 2.2rem;
+}
+
+.procucto__cantidad{
+    border: 2px solid var(--primary);
+    padding: 1rem;
+    text-align: center;
+}
+
+.procucto__cantidad:focus-visible{
+    outline: 2px solid var(--primary);
+    border: none;
+}
+
+.producto__agregar-carrito{
+    margin-top: 1.4rem;
+    display: block;
+    background-color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+    padding: 2rem 5rem;
+    color: var(--blanco);
+    font-size: 1.8rem;
+    font-weight: 700;
+    transition: all .3s ease-out;
+}
+
+.producto__agregar-carrito:hover{
+    background-color: var(--negro);
+    transform: scale(1.1);
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
 .cursos{
     background-image: linear-gradient( to bottom, transparent 0%,  rgb(35, 34, 34) 100%) , url('../img/cursos_bg.jpg');
     background-repeat: no-repeat;
@@ -268,7 +311,151 @@ img {
     transition: all .3s ease-in;
 }
 
+@media screen and (max-width: 768px){
+    .curso__enlace{
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .curso__enlace:hover{
     background-color: var(--primary);
     border-radius: 1rem;
+}
+
+.blog__grid{
+    display: grid;
+    gap: 4rem;
+}
+
+@media screen and (min-width: 768px){
+    .blog__grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 992px){
+    .blog__grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .blog__grid--pagina{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.entrada{
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.entrada__contenido{
+    padding: 2rem;
+}
+
+.entrada__titulo{
+    font-weight: 400;
+    font-size: 2.8rem;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.entrada__fecha{
+    font-size: 1.6rem;
+    color: var(--primary);
+}
+
+.entrada__enlace{
+    display: inline-block;
+    color: var(--negro);
+    text-decoration: none;
+    margin-top: 2rem;
+    border: 2px solid var(--primary);
+    padding: 1rem 5rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition: all .3s ease-in;
+}
+
+@media screen and (max-width: 768px){
+    .entrada__enlace{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.entrada__enlace:hover{
+    background-color: var(--primary);
+    border-radius: 1rem;
+    color: var(--blanco);
+}
+
+.entrada__texto{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;        /* Número de líneas visibles */
+    -webkit-box-orient: vertical; /* Orientación de las líneas */
+    overflow: hidden;             /* Oculta el texto que excede */
+    font-size: 1.6rem;
+}
+
+.footer{
+    margin-top: 5rem;
+    background-color: var(--negro);
+    padding: 5rem 0;    
+}
+
+@media screen and (min-width: 768px){
+    .footer__contenido{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.footer__enlace{
+    font-size: 2.8rem;
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all .3s ease-in-out;
+}   
+
+.footer__enlace:hover{
+    color: var(--primary);
+}
+
+.footer__copy{
+    font-size: 2.8rem;
+    color: var(--blanco);
+    font-weight: 700;
+    text-align: center;
+}
+
+.footer__nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px){
+    .footer__nav{
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.nosotros{
+    padding: 5rem 0;
+}
+
+.nosotros__grid{
+    display: grid;
+    gap: 4rem;
+}
+
+@media screen and (min-width: 768px){
+    .nosotros__grid{
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
 }
